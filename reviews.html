@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Customer Reviews</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="reviews-page">
+
+<div class="top-bar">
+
+<button
+class="back-btn"
+onclick="window.location.href='dashboard.html'">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</button>
+
+<h2>Customer Reviews</h2>
+
+</div>
+
+<div class="review-summary">
+
+<div class="summary-card">
+
+<h3 id="avgRating">
+0.0
+</h3>
+
+<p>Average Rating</p>
+
+</div>
+
+<div class="summary-card">
+
+<h3 id="reviewCount">
+0
+</h3>
+
+<p>Total Reviews</p>
+
+</div>
+
+<div class="summary-card">
+
+<h3 id="fiveStarCount">
+0
+</h3>
+
+<p>5★ Reviews</p>
+
+</div>
+
+</div>
+
+<div class="review-filter">
+
+<input
+type="text"
+id="searchReview"
+placeholder="Search Product...">
+
+<select id="ratingFilter">
+
+<option value="all">
+All Ratings
+</option>
+
+<option value="5">
+★★★★★
+</option>
+
+<option value="4">
+★★★★☆
+</option>
+
+<option value="3">
+★★★☆☆
+</option>
+
+<option value="2">
+★★☆☆☆
+</option>
+
+<option value="1">
+★☆☆☆☆
+</option>
+
+</select>
+
+</div>
+
+<div
+id="reviewsContainer"
+class="reviews-container">
+
+</div>
+
+</div>
+
+<script
+type="module"
+src="reviews.js"></script>
+
+</body>
+
+</html>

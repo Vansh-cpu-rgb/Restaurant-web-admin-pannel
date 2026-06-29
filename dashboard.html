@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<script>
+
+if(
+localStorage.getItem("isAdmin")
+!=="true"
+){
+
+window.location.href =
+"index.html";
+
+}
+
+</script>
+
+<div class="dashboard">
+
+  <div class="top-bar">
+
+    <h1>
+      FoodieExpress
+    </h1>
+
+    <button id="logoutBtn">
+
+      Logout
+
+    </button>
+
+  </div>
+
+  <div class="welcome-card">
+
+    <h2>
+      Welcome Admin 👋
+    </h2>
+
+    <p>
+      Manage your restaurant
+    </p>
+
+  </div>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+
+      <h3 id="totalOrders">
+        0
+      </h3>
+
+      <p>
+        Orders
+      </p>
+
+    </div>
+
+    <div class="stat-card">
+
+      <h3 id="totalRevenue">
+        ₹0
+      </h3>
+
+      <p>
+        Revenue
+      </p>
+
+    </div>
+
+    <div class="stat-card">
+
+      <h3 id="totalProducts">
+        0
+      </h3>
+
+      <p>
+        Products
+      </p>
+
+    </div>
+
+    <div class="stat-card">
+
+      <h3 id="totalReviews">
+        0
+      </h3>
+
+      <p>
+        Reviews
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+<div class="bottom-nav">
+
+  <div class="nav-item active">
+    🏠
+    <span>Home</span>
+  </div>
+
+<div class="nav-item"
+onclick="window.location.href='products.html'">
+
+  🍔
+
+  <span>Products</span>
+
+</div>
+
+<div class="nav-item"
+onclick="window.location.href='orders.html'">
+
+📦
+<span>Orders</span>
+
+</div>
+
+<div class="nav-item"
+onclick="window.location.href='reviews.html'">
+
+⭐
+
+<span>Reviews</span>
+
+</div>
+
+  <div class="nav-item">
+    ⚙️
+    <span>Settings</span>
+  </div>
+
+</div>
+
+<script>
+
+document
+.getElementById("logoutBtn")
+.addEventListener("click",()=>{
+
+localStorage.removeItem(
+"isAdmin"
+);
+
+window.location.href =
+"index.html";
+
+});
+
+</script>
+<script type="module" src="dashboard.js"></script>
+
+</body>
+</html>

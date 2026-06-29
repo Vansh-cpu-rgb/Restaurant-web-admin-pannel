@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>FoodExpress Admin</title>
+
+<link rel="stylesheet"
+href="orders.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+<div class="top-bar-fixed">
+  <button class="back-btn" onclick="history.back()">
+    ← Back
+  </button>
+
+  <h2>Orders</h2>
+</div>
+<div class="admin-header">
+
+<h1>Orders Dashboard</h1>
+
+<p>
+Manage customer orders
+</p>
+
+</div>
+
+<div class="stats-row">
+
+<div class="stat-card">
+
+<h2 id="liveCount">0</h2>
+
+<p>Active Orders</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="historyCount">0</h2>
+
+<p>Completed Orders</p>
+
+</div>
+
+</div>
+<div class="stats-grid">
+
+<div class="stat-card">
+<h3 id="totalOrders">0</h3>
+<p>Total Orders</p>
+</div>
+
+<div class="stat-card">
+<h3 id="pendingOrders">0</h3>
+<p>Pending Orders</p>
+</div>
+
+<div class="stat-card">
+<h3 id="deliveredOrders">0</h3>
+<p>Delivered Orders</p>
+</div>
+
+<div class="stat-card">
+<h3 id="todayRevenue">₹0</h3>
+<p>Total Revenue</p>
+</div>
+
+</div>
+<div class="search-box">
+
+<input
+type="text"
+id="orderSearch"
+placeholder="Search Order ID...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+<div class="tabs">
+
+<button
+id="liveOrdersBtn"
+class="tab-btn active-tab">
+
+Live Orders
+
+</button>
+
+<button
+id="historyOrdersBtn"
+class="tab-btn">
+
+History
+
+</button>
+
+</div>
+
+<div id="liveOrdersContainer"
+class="orders-container">
+
+</div>
+
+<div id="historyOrdersContainer"
+class="orders-container"
+style="display:none;">
+
+</div>
+
+<!-- POPUP -->
+
+<div id="orderPopup"
+class="popup-overlay">
+
+<div class="popup-box">
+
+<button
+id="closeOrderPopup"
+class="close-btn">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+<div id="popupContent">
+
+<div class="order-timeline">
+
+<div class="timeline-step" id="stepPending">
+<span>1</span>
+<p>Pending</p>
+</div>
+
+<div class="timeline-line"></div>
+
+<div class="timeline-step" id="stepAccepted">
+<span>2</span>
+<p>Accepted</p>
+</div>
+
+<div class="timeline-line"></div>
+
+<div class="timeline-step" id="stepPreparing">
+<span>3</span>
+<p>Preparing</p>
+</div>
+
+<div class="timeline-line"></div>
+
+<div class="timeline-step" id="stepDelivery">
+<span>4</span>
+<p>Out For Delivery</p>
+</div>
+
+<div class="timeline-line"></div>
+
+<div class="timeline-step" id="stepDelivered">
+<span>5</span>
+<p>Delivered</p>
+</div>
+
+</div>
+
+<div id="popupOrderId"></div>
+<div id="popupCustomer"></div>
+<div id="popupAddress"></div>
+<div id="popupItems"></div>
+<div id="popupTotal"></div>
+<div id="popupStatus"></div>
+
+</div>
+
+<div class="popup-buttons">
+
+<button id="acceptOrderBtn">
+
+Accept
+
+</button>
+
+<button id="rejectOrderBtn">
+
+Reject
+
+</button>
+
+<button id="nextStatusBtn">
+
+Update Status
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<audio id="newOrderSound">
+
+<source
+src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"
+type="audio/mpeg">
+
+</audio>
+<div class="bottom-nav">
+
+  <div class="nav-item" onclick="window.location.href='dashboard.html'">
+    🏠
+    <span>Home</span>
+  </div>
+    <div class="nav-item" onclick="window.location.href='products.html'">
+    🍔
+    <span>Products</span>
+  </div>
+
+  <div class="nav-item active">
+    📦
+    <span>Orders</span>
+  </div>
+
+
+
+  <div class="nav-item" onclick="window.location.href='reviews.html'">
+    ⭐
+    <span>Reviews</span>
+  </div>
+
+  <div class="nav-item" onclick="window.location.href='settings.html'">
+    ⚙️
+    <span>Settings</span>
+  </div>
+
+</div>
+<script type="module"
+src="orders.js"></script>
+<!-- NEW ORDER ALERT -->
+
+<div id="newOrderAlert" class="new-order-alert">
+
+<div class="alert-box">
+
+<h2>🔔 New Order Received</h2>
+
+<p id="alertCustomer">
+Customer Name
+</p>
+
+<p id="alertAmount">
+₹0
+</p>
+
+<button id="viewNewOrderBtn">
+
+View Order
+
+</button>
+
+</div>
+
+</div>
+</body>
+</html>
