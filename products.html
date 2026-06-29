@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+My next cheese theek to kar li matlab vah chij aap theek ho gai Magar Ham next problem a gai hai ki aap jab product page per Ja Rahe Hain To vah ho raha hai
 
-<head>
+<!DOCTYPE html>  <html lang="en">  <head>  <meta charset="UTF-8">  
+<meta name="viewport"  
+content="width=device-width, initial-scale=1.0">  <title>Products</title>  <link rel="stylesheet"  
+href="style.css">  
+</head>  
 
-<meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Products</title>
-
-<link rel="stylesheet"
-href="style.css">
-
-</head>
-
-<body>
-
+<body>  
 <script>
 
 if(
@@ -29,237 +20,169 @@ window.location.href =
 }
 
 </script>
+<div class="dashboard">    <div class="top-bar">  <h1>  
+  Products  
+</h1>
 
-<div class="dashboard">
+  </div>    <div class="welcome-card">  <h2>  
+  Manage Products 🍔  
+</h2>  
 
-  <div class="top-bar">
+<p>  
+  Add, Edit and Delete Products  
+</p>
 
-    <h1>
-      Products
-    </h1>
+  </div>    <button id="addProductBtn">  + Add Product
 
-  </div>
+  </button>  <input
+type="text"
+id="searchProduct"
+placeholder="Search Product..."
 
-  <div class="welcome-card">
+> 
 
-    <h2>
-      Manage Products 🍔
-    </h2>
+  <div id="productsContainer">  <div class="product-admin-card">  
 
-    <p>
-      Add, Edit and Delete Products
-    </p>
+  <h3>  
+    Chicken Burger  
+  </h3>  
 
-  </div>
+  <p>  
+    ₹199  
+  </p>  
 
-  <button id="addProductBtn">
+  <span class="stock-badge">  
 
-    + Add Product
+    In Stock  
 
-  </button>
+  </span>  
 
-  <input
-    type="text"
-    id="searchProduct"
-    placeholder="Search Product..."
-  >
+  <div class="product-actions">  
 
-  <div id="productsContainer">
+    <button>  
 
-    <div class="product-admin-card">
+      Edit  
 
-      <h3>
-        Chicken Burger
-      </h3>
+    </button>  
 
-      <p>
-        ₹199
-      </p>
+    <button>  
 
-      <span class="stock-badge">
+      Delete  
 
-        In Stock
+    </button>  
 
-      </span>
-
-      <div class="product-actions">
-
-        <button>
-
-          Edit
-
-        </button>
-
-        <button>
-
-          Delete
-
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
+  </div>  
 
 </div>
 
-<div class="bottom-nav">
+  </div>  </div>  <div class="bottom-nav">  <div class="nav-item"  
+onclick="window.location.href='dashboard.html'">  🏠
 
-<div class="nav-item"
-onclick="window.location.href='dashboard.html'">
+<span>Home</span>
 
-  🏠
-
-  <span>Home</span>
-
-</div>
-
-  <div class="nav-item active">
-    🍔
-    <span>Products</span>
-  </div>
-
-<div class="nav-item"
-onclick="window.location.href='orders.html'">
-
-📦
+</div>    <div class="nav-item active">  
+    🍔  
+    <span>Products</span>  
+  </div>  <div class="nav-item"  
+onclick="window.location.href='orders.html'">  📦
 <span>Orders</span>
 
-</div>
+</div>    <div class="nav-item">  
+    ⭐  
+    <span>Reviews</span>  
+  </div>    <div class="nav-item">  
+    ⚙️  
+    <span>Settings</span>  
+  </div>  </div>  <script type="module"  
+src="products.js"></script>  <div id="productPopup">    <div class="popup-box">  <h2>Add Product 🍔</h2>  
 
-  <div class="nav-item">
-    ⭐
-    <span>Reviews</span>
-  </div>
+<input  
+  type="text"  
+  id="productName"  
+  placeholder="Product Name"  
+>  
 
-  <div class="nav-item">
-    ⚙️
-    <span>Settings</span>
-  </div>
+<input  
+  type="number"  
+  id="productPrice"  
+  placeholder="Price"  
+>
 
-</div>
-
-<script type="module"
-src="products.js"></script>
-
-<div id="productPopup">
-
-  <div class="popup-box">
-
-    <h2>Add Product 🍔</h2>
-
-    <input
-      type="text"
-      id="productName"
-      placeholder="Product Name"
-    >
-
-    <input
-      type="number"
-      id="productPrice"
-      placeholder="Price"
-    >
-
-<select id="productCategory">
-
-<option value="">
-Select Category
-</option>
-
-<option>
-Pizza
-</option>
-
-<option>
-Burger
-</option>
-
-<option>
-Pasta
-</option>
-
-<option>
-Biryani
-</option>
-
-<option>
-Drinks
-</option>
-
-<option>
-Dessert
-</option>
-
-</select>
-
-    <textarea
-      id="productDescription"
-      placeholder="Description"
-    ></textarea>
+<select id="productCategory">  <option value="">  
+Select Category  
+</option>  <option>  
+Pizza  
+</option>  <option>  
+Burger  
+</option>  <option>  
+Pasta  
+</option>  <option>  
+Biryani  
+</option>  <option>  
+Drinks  
+</option>  <option>  
+Dessert  
+</option>  </select>  <textarea  
+  id="productDescription"  
+  placeholder="Description"  
+></textarea>
 
 <input
 type="text"
 id="productImage"
 placeholder="Image URL"
->
 
-<img
-id="imagePreview"
-src=""
-style="
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:15px;
-display:none;
-margin-bottom:15px;
+> 
+
+<img  
+id="imagePreview"  
+src=""  
+style="  
+width:100%;  
+height:180px;  
+object-fit:cover;  
+border-radius:15px;  
+display:none;  
+margin-bottom:15px;  
 ">
 
-<select id="foodType">
+<select id="foodType">  
+<option value="">  
+Food Type  
+</option>  
+<option>  
+Veg  
+</option>  
+<option>  
+Non Veg  
+</option> 
 
-<option value="">
-Food Type
-</option>
+</select> 
+<select id="stockStatus"> 
 
-<option>
-Veg
-</option>
+<option>  
+In Stock  
+</option> 
 
-<option>
-Non Veg
-</option>
+<option>  
+Out Of Stock  
+</option> 
 
-</select>
+</select>  
+<input  
+type="text"  
+id="productModel3D"  
+placeholder="3D Model URL (.glb)"  
+> 
+<button id="saveProductBtn">  
+  Save Product  
+</button>  
 
-<select id="stockStatus">
+<button id="closePopupBtn">  
+  Close  
+</button>
 
-<option>
-In Stock
-</option>
-
-<option>
-Out Of Stock
-</option>
-
-</select>
-<input
-type="text"
-id="productModel3D"
-placeholder="3D Model URL (.glb)"
->
-
-
-    <button id="saveProductBtn">
-      Save Product
-    </button>
-
-    <button id="closePopupBtn">
-      Close
-    </button>
-
-  </div>
-
-</div>
-</body>
-</html>
+  </div> 
+  </div>  
+</body>  
+</html>  
